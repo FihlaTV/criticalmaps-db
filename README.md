@@ -1,0 +1,2 @@
+# criticalmaps-db
+Database configuration
