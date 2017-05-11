@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS locations (
   longitude integer DEFAULT NULL,
   latitude integer DEFAULT NULL
 );
+ALTER TABLE locations ADD CONSTRAINT device_must_be_unique UNIQUE (device);
 INSERT INTO locations (id, device, timestamp, longitude, latitude) VALUES
 (5505424, 'eecbdd5e777eba579711b781e6f7ca35d29ef126', '2016-06-29 19:09:42', '13226078', '52541124'),
 (5505425, '5ed598cddac16f2928e35ce8df20f269a10a3d0e', '2016-06-29 19:09:45', '8266885', '49999981');
