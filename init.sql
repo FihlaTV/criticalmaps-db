@@ -14,7 +14,7 @@ INSERT INTO chat_messages (message, ip, timestamp, identifier, longitude, latitu
 CREATE TABLE IF NOT EXISTS locations (
   id SERIAL,
   device varchar(40) NOT NULL,
-  timestamp timestamp NOT NULL default current_timestamp,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   longitude integer DEFAULT NULL,
   latitude integer DEFAULT NULL
 );
