@@ -1,9 +1,7 @@
 version: '2'
 services:
   db:
-    build:
-      context: .
-      dockerfile: Dockerfile.postgres
+    image: postgres:9.6
     ports:
       - "5432:5432"
     environment:
@@ -11,6 +9,7 @@ services:
       POSTGRES_PASSWORD: bla
       POSTGRES_DB: criticalmaps
     restart: always
+
   migrations:
     build:
       context: .

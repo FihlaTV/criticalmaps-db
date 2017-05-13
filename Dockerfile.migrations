@@ -1,5 +1,5 @@
 FROM node:7-alpine
 
-RUN npm install -g node-pg-migrate pg
+RUN npm install -g node-pg-migrate pg --silent
 
 ENTRYPOINT ["pg-migrate"]
