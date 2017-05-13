@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: bla
+      POSTGRES_PASSWORD: bla
+      POSTGRES_DB: criticalmaps
+    restart: always
+  migrations:
+    build:
+      context: .
+      dockerfile: Dockerfile.migrations
+    volumes:
+      - ./migrations/:/migrations/
+    environment:
+      DATABASE_URL: postgres://bla:bla@db/criticalmaps
+    command:  ["up"]
+    restart: on-failure
