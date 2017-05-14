@@ -6,7 +6,7 @@ var sql = `
     longitude integer DEFAULT NULL,
     latitude integer DEFAULT NULL,
 
-    UNIQUE(id, device)
+    UNIQUE(id, device) 
   );
 `
 
